@@ -1,0 +1,83 @@
+<main class="container">
+  <section class="container-fluid layout">
+    <h3 class="text-center">Livros Lidos</h3>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Título</th>
+          <th scope="col" class="text-center">Páginas</th>
+          <th scope="col" class="text-center">Lido em</th>
+          <th scope="col" class="text-center col-2">Opções</th>
+        </tr>
+      </thead>
+
+      <tbody
+        class="table-group-divider"
+        *ngFor="let livro of listaLivros; let i = index"
+      >
+        <tr>
+          <td class="text-center">{{ livro.titulo }}</td>
+          <td class="text-center">{{ livro.paginas }}</td>
+          <td class="text-center">{{ livro.data }}</td>
+          <td class="text-center">
+            <a
+              routerLink="/editar"
+              class="btn edit"
+              (click)="editarLivro(livro)"
+              >Editar</a
+            >
+            <a
+              routerLink="/editar"
+              (click)="excluirLivro(i)"
+              class="btn delete"
+              >Deletar</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="tituloEdit">
+      <h3 class="text-center edit-title">Editar Livro</h3>
+
+      <div class="inputs">
+        <div class="input col-3">
+          <div class="mb-1">Nome</div>
+          <input
+            type="text"
+            maxlength="30"
+            name="livro"
+            class="form-control"
+            [(ngModel)]="tituloEdit"
+          />
+        </div>
+
+        <div class="input col-3">
+          <div class="mb-1">Páginas</div>
+          <input
+            type="number"
+            maxlength="5"
+            name="qtd"
+            class="form-control"
+            [(ngModel)]="paginasEdit"
+          />
+        </div>
+
+        <div class="input col-4">
+          <div class="mb-1">Data</div>
+          <input
+            type="date"
+            name="data"
+            class="form-control"
+            [(ngModel)]="dataEdit"
+          />
+        </div>
+      </div>
+
+      <div class="d-flex flex-row-reverse">
+        <button class="btn btn-primary" (click)="salvarEdicao()">Editar</button>
+      </div>
+    </div>
+  </section>
+</main>

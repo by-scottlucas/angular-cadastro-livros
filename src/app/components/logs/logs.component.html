@@ -1,0 +1,31 @@
+<main class="container">
+  <section class="container-fluid layout">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Modificações</th>
+          <th scope="col" class="text-center">Hora</th>
+          <th scope="col" class="text-center">Data</th>
+          <th scope="col" class="text-center">Tipo</th>
+        </tr>
+      </thead>
+
+      <tbody
+        class="table-group-divider"
+        *ngFor="let log of listaLogs; let i = index"
+      >
+        <tr>
+          <td class="text-center">{{ log.modificacao }}</td>
+          <td class="text-center">{{ log.hora }}</td>
+          <td class="text-center">{{ log.data }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="d-flex flex-row-reverse">
+      <button class="btn btn-danger" (click)="deletarRegistros()">
+        Limpar
+      </button>
+    </div>
+  </section>
+</main>
