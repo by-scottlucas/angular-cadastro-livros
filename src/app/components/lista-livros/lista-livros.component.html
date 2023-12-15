@@ -25,13 +25,13 @@
               routerLink="/editar"
               class="btn edit"
               (click)="editarLivro(livro)"
-              >Editar</a
+              ><i class="bi bi-pencil-square"></i></a
             >
             <a
               routerLink="/editar"
               (click)="excluirLivro(i)"
               class="btn delete"
-              >Deletar</a
+              ><i class="bi bi-trash"></i></a
             >
           </td>
         </tr>
@@ -76,7 +76,7 @@
       </div>
 
       <div class="d-flex flex-row-reverse">
-        <button class="btn btn-primary" (click)="salvarEdicao()">Editar</button>
+        <button (click)="salvarEdicao()">Editar</button>
       </div>
     </div>
   </section>

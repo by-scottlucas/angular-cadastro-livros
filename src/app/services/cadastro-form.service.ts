@@ -10,7 +10,6 @@ const livrosStorageKey = 'Lista_Livros';
 export class CadastroFormService {
 
     livros!: ICadastroLivro[];
-    livroEdit: ICadastroLivro | null = null;
 
     constructor(private storageService: StorageService) {
         this.livros = storageService.getData(livrosStorageKey);
@@ -25,7 +24,7 @@ export class CadastroFormService {
         this.saveList();
     }
 
-    listLivros(index: number): ICadastroLivro {
+    listaLivros(index: number): ICadastroLivro {
         return this.livros[index];
     }
 
@@ -38,4 +37,5 @@ export class CadastroFormService {
         this.livros.splice(index, 1);
         this.saveList();
     }
+
 }

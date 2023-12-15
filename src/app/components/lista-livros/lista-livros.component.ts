@@ -47,5 +47,5 @@ export class ListaLivrosComponent {
   excluirLivro(index: number): void {
     this.cadastroService.excluir(index);
   }
-  
+
 }
