@@ -1,31 +1,40 @@
+<nav>
+  <button routerLink="/cadastrados" class="nav-btn">Cadastrados</button>
+  <button routerLink="/cadastrar" class="nav-btn">Cadastrar</button>
+</nav>
+
 <main class="container">
+
   <section class="container-fluid layout">
+
     <table class="table table-bordered">
+
       <thead>
+
         <tr>
           <th scope="col" class="text-center">Modificações</th>
           <th scope="col" class="text-center">Hora</th>
           <th scope="col" class="text-center">Data</th>
           <th scope="col" class="text-center">Tipo</th>
         </tr>
+
       </thead>
 
-      <tbody
-        class="table-group-divider"
-        *ngFor="let log of listaLogs; let i = index"
-      >
-        <tr>
-          <td class="text-center">{{ log.modificacao }}</td>
+      <tbody>
+
+        <tr *ngFor="let log of listaLogs; let i = index">
+          <td class="text-center" *ngFor="let modificacao of log.modificacao">{{ modificacao }}</td>
           <td class="text-center">{{ log.hora }}</td>
           <td class="text-center">{{ log.data }}</td>
+          <td class="text-center">{{ log.tipo }}</td>
         </tr>
+
       </tbody>
+
     </table>
 
-    <div class="d-flex flex-row-reverse">
-      <button class="btn btn-danger" (click)="deletarRegistros()">
-        Limpar
-      </button>
-    </div>
+    <button class="btn btn-danger" (click)="deletarLogs()">Limpar Logs</button>
+
   </section>
+
 </main>

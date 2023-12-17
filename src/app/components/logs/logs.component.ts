@@ -12,12 +12,11 @@ export class LogsComponent {
   listaLogs!: ILogs[];
 
   constructor(private logsService: LogsService) {
-    this.listaLogs = logsService.listaLogs;
-    console.log(this.listaLogs);
+    this.listaLogs = logsService.getLogs();
   }
 
-  deletarRegistros() {
-    this.listaLogs.shift();
+  deletarLogs(): void {
+    this.logsService.clearLogs();
   }
 
 }

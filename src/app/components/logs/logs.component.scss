@@ -5,6 +5,33 @@
     padding: 0;
 }
 
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-btn {
+    border: none;
+    color: #fff;
+    border-radius: 2px;
+    font-size: .9rem;
+    width: 100px;
+    height: 34px;
+    background-color: #4682b4;
+}
+
+.nav-btn:hover {
+    color: #fff;
+    background-color: #2f6896;
+}
+
+.nav-btn:focus {
+    outline: none;
+    border: none;
+    background-color: #2f6896;
+}
+
 .container {
     display: flex;
     flex-direction: column;

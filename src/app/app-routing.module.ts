@@ -8,8 +8,8 @@ import { LogsComponent } from './components/logs/logs.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'cadastro', component: CadastroFormComponent },
-  {path:'cadastrados', component: ListaLivrosComponent},
-  {path: 'logs', component: LogsComponent}
+  { path: 'cadastrados', component: ListaLivrosComponent },
+  { path: 'logs', component: LogsComponent }
 ];
 
 @NgModule({

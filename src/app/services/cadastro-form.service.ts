@@ -9,18 +9,23 @@ const livrosStorageKey = 'Lista_Livros';
 })
 export class CadastroFormService {
 
-    livros!: ICadastroLivro[];
+    private livros!: ICadastroLivro[];
 
     constructor(private storageService: StorageService) {
-        this.livros = storageService.getData(livrosStorageKey);
+        this.livros = this.storageService.getData(livrosStorageKey);
     }
 
-    saveList() {
-        this.storageService.setData(livrosStorageKey, this.livros);
+    private saveList(): void {
+        try {
+            this.storageService.setData(livrosStorageKey, this.livros);
+        } catch (error) {
+            console.error('Não foi possível salvar o livro. Erro:', error);
+        }
     }
 
-    adicionar(tituloRecebido: string, paginasRecebidas: number, dataRecebida: string): void {
-        this.livros.push({ titulo: tituloRecebido, paginas: paginasRecebidas, data: dataRecebida });
+    adicionar(titulo: string, paginas: number, data: string): void {
+        const novoLivro: ICadastroLivro = { titulo, paginas, data };
+        this.livros.push(novoLivro);
         this.saveList();
     }
 
@@ -28,7 +33,7 @@ export class CadastroFormService {
         return this.livros[index];
     }
 
-    salvarEdit(index: number, livroEdicao: string, paginasEdicao: number, dataEdicao: string): void {
+    salvarEdicao(index: number, livroEdicao: string, paginasEdicao: number, dataEdicao: string): void {
         this.livros[index] = { titulo: livroEdicao, paginas: paginasEdicao, data: dataEdicao };
         this.saveList();
     }
@@ -38,4 +43,7 @@ export class CadastroFormService {
         this.saveList();
     }
 
+    getLivros(): ICadastroLivro[] {
+        return this.livros;
+    }
 }
