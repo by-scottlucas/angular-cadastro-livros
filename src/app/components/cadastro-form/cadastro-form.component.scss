@@ -8,7 +8,7 @@
 nav {
     margin-top: 20px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .nav-btn {
@@ -30,6 +30,14 @@ nav {
     outline: none;
     border: none;
     background-color: #2f6896;
+}
+
+.sair {
+    background-color: #d80101;
+}
+
+.sair:hover {
+    background-color: #a30000;
 }
 
 .container {

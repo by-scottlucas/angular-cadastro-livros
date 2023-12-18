@@ -8,9 +8,15 @@ import { LogsComponent } from './components/logs/logs.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'cadastro', component: CadastroFormComponent },
-  { path: 'lista', component: ListaLivrosComponent },
-  { path: 'logs', component: LogsComponent }
+  {
+    path: '',
+    children: [
+      { path: 'cadastro', component: CadastroFormComponent },
+      { path: 'lista', component: ListaLivrosComponent },
+      { path: 'logs', component: LogsComponent },
+      { path: '', redirectTo: 'cadastrados', pathMatch: 'full' },
+    ],
+  },
 ];
 
 @NgModule({
