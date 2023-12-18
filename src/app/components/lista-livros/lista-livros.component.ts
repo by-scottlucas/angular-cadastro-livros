@@ -32,9 +32,10 @@ export class ListaLivrosComponent {
   }
 
   salvarEdicao(): void {
-    const dataFormatada = this.dataEdit.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1');
 
     if (this.tituloEditIndex !== null && this.tituloEdit) {
+
+      const dataFormatada = this.dataEdit.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1');
 
       const tituloAntigo = this.listaLivros[this.tituloEditIndex].titulo;
 
