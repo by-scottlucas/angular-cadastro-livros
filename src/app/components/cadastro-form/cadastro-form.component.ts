@@ -24,9 +24,10 @@ export class CadastroFormComponent {
     const dataFormatada = this.data.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1');
 
     this.cadastroService.adicionar(this.titulo, this.paginas, dataFormatada);
+    
     alert("Livro cadastrado com sucesso!");
 
-    this.router.navigate(["/cadastrados"]);
+    this.router.navigate(["lista"]);
 
     const novoLog = `Livro Cadastrado: ${this.titulo} | Páginas: ${this.paginas} | Lido em: ${dataFormatada}`
     this.logsService.addLog(novoLog, "Adição");

@@ -14,8 +14,8 @@ import { LogsComponent } from './components/logs/logs.component';
     AppComponent,
     LoginComponent,
     CadastroFormComponent,
-    LogsComponent,
-    ListaLivrosComponent
+    ListaLivrosComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,

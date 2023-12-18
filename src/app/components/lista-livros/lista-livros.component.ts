@@ -44,8 +44,6 @@ export class ListaLivrosComponent {
       const novoLog = `Livro Editado: ${tituloAntigo} para ${this.tituloEdit} | Páginas: ${this.paginasEdit} | Lido em: ${dataFormatada}`;
       this.logsService.addLog(novoLog, 'Edição');
 
-      alert("Livro editado com sucesso!");
-
       this.boxEdit = false;
     }
   }
