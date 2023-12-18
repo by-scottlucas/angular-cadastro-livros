@@ -12,7 +12,7 @@ export class CadastroFormService {
     private livros!: ICadastroLivro[];
 
     constructor(private storageService: StorageService) {
-        this.livros = this.storageService.getData(livrosStorageKey);
+        this.livros = this.storageService.getData(livrosStorageKey) || [];
     }
 
     private saveList(): void {

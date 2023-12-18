@@ -12,7 +12,7 @@ export class LogsService {
   private logs!: ILogs[];
 
   constructor(private storageService: StorageService) {
-    this.logs = this.storageService.getData(logsStorageKey);
+    this.logs = this.storageService.getData(logsStorageKey) || [];
   }
 
   private saveLogs(): void {
