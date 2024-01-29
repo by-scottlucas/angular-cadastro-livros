@@ -24,11 +24,11 @@ export class LogsService {
   }
 
   addLog(message: string, tipo: string): void {
-    const timestamp = new Date();
+    const time = new Date();
     const logMessage: ILogs = {
       modificacao: [message],
-      hora: this.formatarHora(timestamp),
-      data: this.formatarData(timestamp),
+      hora: this.formatarHora(time),
+      data: this.formatarData(time),
       tipo: tipo
     };
     this.logs.push(logMessage);

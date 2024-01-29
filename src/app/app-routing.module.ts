@@ -14,7 +14,6 @@ const routes: Routes = [
       { path: 'cadastro', component: CadastroFormComponent },
       { path: 'lista', component: ListaLivrosComponent },
       { path: 'logs', component: LogsComponent },
-      { path: '', redirectTo: 'cadastrados', pathMatch: 'full' },
     ],
   },
 ];

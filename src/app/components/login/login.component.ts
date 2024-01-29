@@ -11,11 +11,7 @@ export class LoginComponent {
   email!: string;
   senha!: string;
 
-
-  constructor(private router: Router) {
-
-  }
-
+  constructor(private router: Router) { }
 
   entrar(): void {
 

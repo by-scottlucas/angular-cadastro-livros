@@ -8,6 +8,7 @@
   <section class="container-fluid layout">
 
     <div>
+
       <h3 class="text-center">Livros Lidos</h3>
 
       <table class="table table-bordered">
@@ -26,17 +27,20 @@
             <td class="text-center">{{ livro.paginas }}</td>
             <td class="text-center">{{ livro.data }}</td>
             <td class="text-center">
-              <a routerLink="/editar" class="btn edit" (click)="editarLivro(livro)"><i
-                  class="bi bi-pencil-square"></i></a>
-              <a routerLink="/editar" (click)="excluirLivro(i)" class="btn delete"><i class="bi bi-trash"></i></a>
+              <a routerLink="/editar" class="btn edit" (click)="editarLivro(livro)">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <a routerLink="/editar" (click)="excluirLivro(i)" class="btn delete">
+                <i class="bi bi-trash"></i>
+              </a>
             </td>
           </tr>
         </tbody>
-      </table>  
+      </table>
     </div>
 
-
     <div *ngIf="boxEdit;" class="box-edit">
+      
       <h3 class="text-center edit-title">Editar Livro</h3>
 
       <div class="inputs">
